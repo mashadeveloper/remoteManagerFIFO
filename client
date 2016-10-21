@@ -1,0 +1,11 @@
+#!/bin/bash
+echo 'Type some command("exit" to exit from script)'
+Command=begin
+until [ "$Command" = "exit" ]
+do
+echo 'Command:'
+read Command
+echo $Command > /tmp/piperead
+cat < /tmp/pipewrite
+done
+echo 'Exit from script'
